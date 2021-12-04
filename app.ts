@@ -6,10 +6,10 @@ class Dice {
   }
 }
 
-const dice = new Dice(3);
-const dice1 = new Dice(2);
-const dice2 = new Dice(2);
-const dice3 = new Dice(1);
+const dice = new Dice(5);
+const dice1 = new Dice(3);
+const dice2 = new Dice(1);
+const dice3 = new Dice(2);
 
 class Ladder {
   constructor(public strt_pos: number, public end_pos: number) {
@@ -66,14 +66,12 @@ class Board {
   };
 
   playerMoves = () => {
-    for (let i = 0; i < 1; i++) {
-      this.dice.forEach((d) => {
-        this.player += d.diceRandomInput;
-        this.ladderCheck();
-        this.snakeCheck();
-        console.log(this.ladderCheck());
-      });
-    }
+    this.dice.forEach((d) => {
+      this.player += d.diceRandomInput;
+      this.ladderCheck();
+      this.snakeCheck();
+      console.log(this.ladderCheck());
+    });
   };
 }
 

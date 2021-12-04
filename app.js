@@ -6,10 +6,10 @@ var Dice = /** @class */ (function () {
     }
     return Dice;
 }());
-var dice = new Dice(3);
-var dice1 = new Dice(2);
-var dice2 = new Dice(2);
-var dice3 = new Dice(1);
+var dice = new Dice(5);
+var dice1 = new Dice(3);
+var dice2 = new Dice(1);
+var dice3 = new Dice(2);
 var Ladder = /** @class */ (function () {
     function Ladder(strt_pos, end_pos) {
         this.strt_pos = strt_pos;
@@ -61,14 +61,14 @@ var Board = /** @class */ (function () {
             return _this.player;
         };
         this.playerMoves = function () {
-            for (var i = 0; i < 1; i++) {
-                _this.dice.forEach(function (d) {
-                    _this.player += d.diceRandomInput;
-                    _this.ladderCheck();
-                    _this.snakeCheck();
-                    console.log(_this.ladderCheck());
-                });
-            }
+            // for (let i = 0; i < 1; i++) {
+            _this.dice.forEach(function (d) {
+                _this.player += d.diceRandomInput;
+                _this.ladderCheck();
+                _this.snakeCheck();
+                console.log(_this.ladderCheck());
+            });
+            // }
         };
         this.boardPosition = boardPosition;
         this.player = player;
